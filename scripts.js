@@ -21,28 +21,19 @@ function flipCard() {
     checkForMatch(); 
 }
 
-// function checkForMatch() {
-//     if (firstCard.dataset.framework === secondCard.dataset.framework) {
-//         disableCards();
-//         return;
-//     }
-
-//     unflipCards();
-// }
-
-function checkForMatch() {
+checkForMatch = () => {
     let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
     isMatch ? disableCards() : unflipCards();
 }
 
-function disableCards() {
+disableCards = () => {
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
 
     resetBoard();
 }
 
-function unflipCards() {
+unflipCards = () => {
     lockBoard = true;
 
     setTimeout(() => {
@@ -50,20 +41,35 @@ function unflipCards() {
         secondCard.classList.remove('flip');
 
         resetBoard();
-    }, 500);
+    }, 450);
 }
 
-function resetBoard() {
+resetBoard = () => {
     [hasFlippedCard, lockBoard] = [false, false];
     [firstCard, secondCard] = [null, null];
 }
 
-(function shuffle() {
+shuffle = () => {
     cards.forEach(card => {
-        let randomPos = Math.floor(Math.random() * 12);
-        card.style.order = randomPos;
+        let randomPosition = Math.floor(Math.random() * 12);
+        card.style.order = randomPosition;
     });
-})();
+} 
+shuffle();
 
 cards.forEach(card => card.addEventListener('click', flipCard));
 
+
+// ADDED FEATURES
+
+// 1. Add button to reset game without refreshing browser
+const playAgain = document.querySelector('#play-again');
+
+playAgain.addEventListener('click', () => {
+    cards.forEach(card => {
+        card.classList.remove('flip');
+        card.addEventListener('click', flipCard);
+    })
+    shuffle();
+    lockboard = false;
+});
