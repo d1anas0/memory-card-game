@@ -10,7 +10,7 @@
 
 </head>
 <body>
-    <section class="memory-game">
+    <div class="memory-game container d-flex flex-column justify-content-center">
         <div class="memory-card" data-framework="orange">
             <img class="front-face" src="img/Orange.svg" alt="Orange">
             <img class="back-face" src="img/card.jpg" alt="card">
@@ -59,13 +59,14 @@
             <img class="front-face" src="img/Red.svg" alt="Red">
             <img class="back-face" src="img/card.jpg" alt="card">
         </div>
-    </section>
-
+    </div>
+    <div class="fixed-bottom d-flex justify-content-center">
+        <button type="button" id="play-again" class="btn btn-success">Play again!</button>
+    </div>
 
 
     <script src="./scripts.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-    
 </body>
 </html>
