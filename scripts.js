@@ -72,32 +72,38 @@ playAgain.addEventListener('click', () => {
     })
     shuffle();
     lockboard = false;
-// });
 
 // 2. Add Countdown timer (till game end)
-let barWidth = 640;
-let time_left = "";
+    let barWidth = 640;
+    let time_left = "";
 
-    startCountdown = (seconds) => {
-        let interval = setInterval (() => {
+        startCountdown = (seconds) => {
+            let interval = setInterval (() => {
 
-            time_left = seconds--;
-            let progressBar = document.querySelector('.progress-bar');
-            progressBar.innerText = time_left + " seconds left!";
+                time_left = seconds--;
+                let progressBar = document.querySelector('.progress-bar');
+                progressBar.innerText = time_left + " seconds left!";
 
-            let reduceBarBy = 640 - ( time_left * (640/30)) ;
+                let reduceBarBy = 640 - ( time_left * (640/60)) ;
 
-            console.log(reduceBarBy)
+                console.log(reduceBarBy)
 
-            let newBarWidth = barWidth - reduceBarBy;
-            progressBar.style.width = newBarWidth + 'px';
-            
-            console.log(barWidth);
-            
-            if (time_left == 0)
-            clearInterval(interval);
-        }, 1000);
+                let newBarWidth = barWidth - reduceBarBy;
+                progressBar.style.width = newBarWidth + 'px';
+                
+                console.log(barWidth);
+                
+                // 2a. Stop game once time is up, reset board.
 
-    };
-    startCountdown(30);
+                if (time_left === 0) {
+                    clearInterval(interval);
+                    cards.forEach(card => {
+                        card.classList.remove('flip');
+                    })
+                shuffle();
+                lockboard = true;
+                }
+            }, 1000);
+        };
+    startCountdown(60);
 });
