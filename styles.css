@@ -59,5 +59,11 @@ body {
     transform: rotateY(180deg);
 }
 
+/* 2. Add Countdown timer (till game end) */
 
+#dynamic-progress {
+    margin: auto;
+    margin-top: 35px;
+    width: 640px;
+}
 

@@ -72,4 +72,32 @@ playAgain.addEventListener('click', () => {
     })
     shuffle();
     lockboard = false;
+// });
+
+// 2. Add Countdown timer (till game end)
+let barWidth = 640;
+let time_left = "";
+
+    startCountdown = (seconds) => {
+        let interval = setInterval (() => {
+
+            time_left = seconds--;
+            let progressBar = document.querySelector('.progress-bar');
+            progressBar.innerText = time_left + " seconds left!";
+
+            let reduceBarBy = 640 - ( time_left * (640/30)) ;
+
+            console.log(reduceBarBy)
+
+            let newBarWidth = barWidth - reduceBarBy;
+            progressBar.style.width = newBarWidth + 'px';
+            
+            console.log(barWidth);
+            
+            if (time_left == 0)
+            clearInterval(interval);
+        }, 1000);
+
+    };
+    startCountdown(30);
 });
