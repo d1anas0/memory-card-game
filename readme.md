@@ -1,4 +1,7 @@
-# Match the word... or the colour? 
+# Match the word, or colour... just not the colour of the word. 
+
+***CURRENTLY UNDERGOING UPDATES***
+
 Play it here: https://d1anas0.github.io/memory-card-game/
 
 Credit: https://medium.com/free-code-camp/vanilla-javascript-tutorial-build-a-memory-game-in-30-minutes-e542c4447eae
