@@ -5,13 +5,13 @@
 }
 
 body {
-    height: 100vh;
+    height: 90vh;
     display: flex;
     background-color: #2e2e2e;
 }
 
 .memory-game {
-    width: 640px;
+    width: 600px;
     height: 640px;
     margin: auto;
     display: flex;
@@ -66,4 +66,3 @@ body {
     margin-top: 35px;
     width: 640px;
 }
-

@@ -51,7 +51,7 @@ resetBoard = () => {
 
 shuffle = () => {
     cards.forEach(card => {
-        let randomPosition = Math.floor(Math.random() * 12);
+        let randomPosition = Math.floor(Math.random() * 16);
         card.style.order = randomPosition;
     });
 } 
