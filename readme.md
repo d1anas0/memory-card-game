@@ -11,6 +11,9 @@ Features I have added:
 - a reset game button
 - countdown timer 
 
+NEXT: 
+- use Bootstrap grid, make mobile responsive (portrait and landscape).  
+
 I've several more ideas to add to this, but feel free to suggest them to me as a challenge! 
 
 Thanks for being here - hope you enjoy playing the game! Let me know how you went
