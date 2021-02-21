@@ -20,7 +20,12 @@ function flipCard() {
 
 checkForMatch = () => {
     let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
-    isMatch ? disableCards() : unflipCards();
+    // isMatch ? disableCards() : unflipCards();
+    if (isMatch) {
+        disableCards(); 
+    } else {
+        unflipCards();
+    }
 }
 
 disableCards = () => {
@@ -103,8 +108,7 @@ playBtn.addEventListener('click', () => {
                     }
                 }
                 
-                // 2a. Stop game once time is up, reset board.
-
+                // 2a. Stop game once time is up, reset board. 
                 if (time_left === 0) {
                     clearInterval(interval);
                     cards.forEach(card => {
@@ -114,29 +118,9 @@ playBtn.addEventListener('click', () => {
                     lockBoard = true;
                     newBarWidth = barWidth;    
                     progressBar.style.width = newBarWidth + 'px';           
-                    progressBar.innerText = "Play again?"
+                    progressBar.innerText = 'Play again?';
                 }
             }, 1000);
         };
     startCountdown(30);
-
-
 });
-
-
-
-// 4. end and restart game when all pairs found
-// if all the cards have been flipped (ie. all pairs matched)
-// success = () => {
-//     cards.forEach(card => {
-//         card.classList.contains('flip');
-        
-//     })
-// }
-// if (success() === true) {
-
-// }
-
-// scorecard pops up with time taken
-// game resets
-
